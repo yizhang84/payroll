@@ -1,9 +1,1 @@
-pluginManagement {
-    repositories {
-        maven {
-            url = "https://nexus.jupiter.bbc.co.uk/nexus/content/groups/public"
-        }
-        gradlePluginPortal()
-    }
-}
 rootProject.name = 'payroll'
