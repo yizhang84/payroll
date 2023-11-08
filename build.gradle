@@ -1,0 +1,31 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.1.5'
+	id 'io.spring.dependency-management' version '1.1.3'
+	id 'uk.co.bbc.bsd.bsd-gradle-plugin' version '2.0.1'
+}
+
+group = 'com.yi'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation platform('uk.co.bbc.jupiter:jupiter-nt-dependencies:1.36.13')
+
+	implementation('uk.co.bbc.jupiter:jupiter-nt-model')
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc:3.1.5'
+	implementation 'org.postgresql:postgresql:42.6.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
